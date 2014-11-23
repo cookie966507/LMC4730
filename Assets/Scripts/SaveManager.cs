@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
@@ -10,7 +11,7 @@ public class SaveManager : MonoBehaviour {
 	public static SaveManager instance;
 
 	//path to the save file
-	private string pathExtention = ("/GemTosser/SaveFiles/info.dat");
+	private string pathExtention = ("/PenPals/SaveFiles/");
 
 	void Awake(){
 		if(instance == null){
@@ -18,7 +19,7 @@ public class SaveManager : MonoBehaviour {
 			instance = this;
 		}
 		else if(instance != this){
-			Debug.Log("Too many Save Controllers");
+			Debug.Log("Too many Save Managers");
 			Destroy (gameObject);
 		}
 	}

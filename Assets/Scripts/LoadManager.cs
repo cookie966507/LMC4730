@@ -10,7 +10,7 @@ public class LoadManager : MonoBehaviour {
 	public static LoadManager instance;
 
 	//path to the save file
-	private string pathExtention = ("/GemTosser/SaveFiles/");
+	private string pathExtention = ("/PenPals/SaveFiles/");
 
 	void Awake(){
 		if(instance == null){
@@ -18,7 +18,7 @@ public class LoadManager : MonoBehaviour {
 			instance = this;
 		}
 		else if(instance != this){
-			Debug.Log("Too many Load Manager");
+			Debug.Log("Too many Load Managers");
 			Destroy (gameObject);
 		}
 	}
