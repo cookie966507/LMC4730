@@ -33,7 +33,7 @@ public class GlobeManager : MonoBehaviour {
 	
 	void OnLevelWasLoaded(int index){
 		if(Application.loadedLevelName.Equals("Globe_Spin")){
-			if(locations == null){
+			if(locations.Count == 0){
 				GameObject[] temp = GameObject.FindGameObjectsWithTag("Location");
 				locations = new List<GameObject>();
 				for(int i = 0; i < temp.Length; i ++){

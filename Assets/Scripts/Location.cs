@@ -5,8 +5,8 @@ using System;
 [Serializable]
 public class Location : MonoBehaviour {
 	
-	[HideInInspector]
-	public bool unlocked = false;
-	[HideInInspector]
+	//HideInInspector]
+	public bool unlocked;
+	//[HideInInspector]
 	public bool complete = false;
 }
