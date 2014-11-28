@@ -16,7 +16,7 @@ public class SpinGlobe : MonoBehaviour {
 		if(Input.touchCount > 0){
 			isDragging = true;
 			if (!Input.GetTouch(0).phase.Equals(TouchPhase.Ended) && !Input.GetTouch(0).phase.Equals(TouchPhase.Began) && isDragging) {
-				theSpeed = new Vector3(-Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0.0F);
+				theSpeed = new Vector3(-Input.GetAxis("Mouse X"), 0, 0.0F);
 				avgSpeed = Vector3.Lerp(avgSpeed, theSpeed, Time.deltaTime * 5);
 			}
 		}
