@@ -6,6 +6,8 @@ public class Activity : MonoBehaviour {
 
 	public int index;
 	
+	public GameObject instructions;
+	
 	public void updateLevel(){
 		Location loc;
 		if(index == 0){
@@ -17,19 +19,23 @@ public class Activity : MonoBehaviour {
 				
 				loc = GlobeManager.instance.locations.Find(i => i.transform.name.Equals("Japan")).GetComponent<Location>();
 				GlobeManager.instance.levelComplete(loc);
+				loc.renderer.material.color = Color.yellow;
 			}
 		}
 		else if(index == 1){
 			loc = GlobeManager.instance.locations.Find(i => i.transform.name.Equals("Africa")).GetComponent<Location>();
 			if(!GlobeManager.instance.isComplete(loc)){
 				GlobeManager.instance.levelComplete(loc);
+				loc.renderer.material.color = Color.yellow;
 			}
 		}
 		else if (index == 2){
 			loc = GlobeManager.instance.locations.Find(i => i.transform.name.Equals("Brazil")).GetComponent<Location>();
 			if(!GlobeManager.instance.isComplete(loc)){
 				GlobeManager.instance.levelComplete(loc);
+				loc.renderer.material.color = Color.yellow;
 			}
 		}
+		GameObject.Find("Sphere").GetComponent<SpinGlobe>().enabled = true;
 	}
 }
