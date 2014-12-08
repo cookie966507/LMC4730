@@ -10,7 +10,7 @@ public class SpinGlobe : MonoBehaviour {
 	private Vector3 avgSpeed;
 	private bool isDragging = false;
 	private Vector3 targetSpeedX;
-
+	
 	void Update() {
 		if(Input.touchCount > 0){
 			isDragging = true;
@@ -23,8 +23,10 @@ public class SpinGlobe : MonoBehaviour {
 				RaycastHit hit;
 				if(Physics.Raycast(ray, out hit) && hit.transform.tag == "Location"){
 					if(GlobeManager.instance.isUnlocked(hit.transform.GetComponent<Location>())){
-						hit.transform.renderer.material.color = Color.yellow;
-						hit.transform.GetComponent<Activity>().updateLevel();
+						//hit.transform.renderer.material.color = Color.yellow;
+						//hit.transform.GetComponent<Activity>().updateLevel();
+						hit.transform.GetComponent<Activity>().instructions.SetActive(true);
+						this.enabled = false;
 					}
 				}
 			}
