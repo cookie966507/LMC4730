@@ -7,7 +7,9 @@ public class LoadLevel : MonoBehaviour {
 	
 	void Update () {
 		if(Input.touchCount > 0){
-			Application.LoadLevel(level);
+			if(Input.touches[0].phase.Equals(TouchPhase.Began)){
+				Application.LoadLevel(level);
+			}
 		}
 	}
 }
