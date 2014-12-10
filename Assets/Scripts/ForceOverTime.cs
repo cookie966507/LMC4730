@@ -6,6 +6,7 @@ public class ForceOverTime : MonoBehaviour {
 	public float force;
 	float time = 3;
 	public float delay;
+	public GameObject sphere;
 	
 	Vector3 start;
 	
@@ -25,7 +26,8 @@ public class ForceOverTime : MonoBehaviour {
 		time = 3;
 		rigidbody2D.velocity = Vector2.zero;
 		transform.position = start;
-		GameObject.Find("Sphere").GetComponent<SpinGlobe>().enabled = true;
+		sphere.SetActive (true);
+		sphere.GetComponent<SpinGlobe>().enabled = true;
 		gameObject.transform.root.gameObject.SetActive(false);
 	}
 }
