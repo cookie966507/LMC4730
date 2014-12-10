@@ -38,6 +38,6 @@ public class Activity : MonoBehaviour {
 				loc.renderer.material.color = Color.green;
 			}
 		}
-		GameObject.Find("Sphere").GetComponent<SpinGlobe>().enabled = true;
+		//GameObject.Find("Sphere").GetComponent<SpinGlobe>().enabled = true;
 	}
 }
